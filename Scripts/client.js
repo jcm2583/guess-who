@@ -21,7 +21,7 @@ function readyNow () {
 
 function placePeople () {
     for (let i=0; i<people.length; i++) {
-        $('.addPictures').append(`
+        $('.addPictures').append(` 
         <div class="formatPics" data-id=${people[i].name}>
         <img src="https://github.com/${people[i].githubUsername}.png?size=250" alt="Profile image of ${people[i].name}">
         </div>`
@@ -70,11 +70,22 @@ function generateName () {
 
 //make a function that will log pic info into the console when clicked on
 function picInfo () {
-  //check that the clicker is working
+  //check that the clicker is workingg
   // console.log('Picture is clicked on');
-  for (let i=0; i<people.length; i++) {
-    let personMatch = people[i].name;
-    personMatch.data('id');
-    
+  // for (let i=0; i<people.length; i++) {
+  //   // let personMatch = people[i].name;
+  //   // personMatch.data('id');
+    // $ (this).data('id');
+  let clickedPhoto = $ (this).data('id');
+  if (clickedPhoto == randomName.name) {
+    alert ("Correct!!!");
   }
+  else {
+    alert ("Sorry! Try Again!");
+  }
+
+
+  // console.log($(this).children('img'));
+  // }
 }
+
